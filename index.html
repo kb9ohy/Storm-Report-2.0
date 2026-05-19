@@ -92,6 +92,34 @@
                 <h2>Report Queue</h2>
                 <span class="modePill" id="reportCount">0 reports</span>
             </div>
+            <section class="setupPanel" aria-label="Weather alert focus">
+                <div class="setupHeader">
+                    <div>
+                        <h3>Alert Focus</h3>
+                        <p>Choose states and counties for NWS polygons.</p>
+                    </div>
+                    <span class="modePill" id="alertCount">0 alerts</span>
+                </div>
+
+                <div class="legend">
+                    <span><i class="legendSwatch legendLow"></i>Low</span>
+                    <span><i class="legendSwatch legendModerate"></i>Moderate</span>
+                    <span><i class="legendSwatch legendHigh"></i>High</span>
+                </div>
+
+                <div class="stateList" id="stateList"></div>
+
+                <div class="countyTools">
+                    <input id="countySearch" type="search" placeholder="Search county or code" aria-label="Search counties">
+                    <div class="countyActions">
+                        <button class="secondaryButton" id="selectAllCounties" type="button">All</button>
+                        <button class="secondaryButton" id="clearCounties" type="button">None</button>
+                        <button class="secondaryButton" id="resetCounties" type="button">Reset</button>
+                    </div>
+                </div>
+                <p class="countySelectionSummary" id="countySelectionSummary">Loading counties...</p>
+                <div class="countyList" id="countyList"></div>
+            </section>
             <div class="filters">
                 <select id="statusFilter" aria-label="Status filter">
                     <option value="all">All status</option>
@@ -128,5 +156,6 @@
 </template>
 
 <script src="app.js"></script>
+<script src="alerts.js"></script>
 </body>
 </html>
