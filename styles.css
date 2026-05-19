@@ -242,6 +242,174 @@ textarea {
     margin-bottom: 12px;
 }
 
+.setupPanel {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.setupHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.setupHeader h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.setupHeader p,
+.countySelectionSummary {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 24px;
+    padding: 2px 7px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: #344054;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.legendSwatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legendLow {
+    background: #2563eb;
+}
+
+.legendModerate {
+    background: #facc15;
+}
+
+.legendHigh {
+    background: #dc2626;
+}
+
+.stateList,
+.countyList {
+    display: grid;
+    gap: 6px;
+}
+
+.stateList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: 116px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.countyList {
+    max-height: 230px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.stateCheck,
+.countyCheck {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+    gap: 6px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 7px 8px;
+    color: #344054;
+    background: #fbfcfe;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.countyCheckMain {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.stateCheck input,
+.countyCheck input {
+    width: auto;
+    margin: 0;
+}
+
+.countyCheckMain span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.countyCode {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.countyTools {
+    display: grid;
+    gap: 8px;
+}
+
+.countyActions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.countyActions .secondaryButton {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 12px;
+}
+
+.alertMessage {
+    color: var(--danger);
+}
+
+.highSeverityPolygon {
+    animation: highSeverityPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes highSeverityPulse {
+    0%,
+    100% {
+        stroke-opacity: 0.95;
+        stroke-width: 2;
+    }
+
+    50% {
+        stroke-opacity: 0.45;
+        stroke-width: 3;
+    }
+}
+
 .reportList {
     display: grid;
     gap: 10px;
@@ -377,5 +545,15 @@ textarea {
     .locationRow,
     .filters {
         grid-template-columns: 1fr;
+    }
+
+    .stateList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .highSeverityPolygon {
+        animation: none;
     }
 }
